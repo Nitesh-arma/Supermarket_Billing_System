@@ -1,0 +1,177 @@
+/* 1. Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* 2. Full Screen Setup */
+body {
+    background-color: #001f3f; /* Navy Blue Background */
+    height: 100vh; /* Forces body to take full screen height */
+    display: flex;
+    flex-direction: column;
+    overflow: hidden; /* Prevents double scrollbars */
+}
+
+/* 3. Top Bar (Navy Darker) */
+.top-bar {
+    background-color: #001226;
+    color: #7FDBFF; /* Light blue text */
+    padding: 10px 30px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    border-bottom: 1px solid #003366;
+}
+
+/* 4. Main Container (The White Box) */
+.main-container {
+    flex: 1; /* Takes all available empty space */
+    background-color: #f9f9f9;
+    width: 90%;
+    max-width: 1000px;
+    margin: 20px auto; /* Centers it */
+    border-radius: 8px;
+    box-shadow: 0 0 30px rgba(0,0,0,0.5);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+/* 5. Header Inside Box */
+header {
+    background-color: #001f3f;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    border-bottom: 4px solid #FF851B; /* Orange accent line */
+}
+
+header h1 {
+    font-size: 24px;
+    letter-spacing: 1px;
+}
+
+header p {
+    font-size: 12px;
+    color: #cccccc;
+    margin-top: 5px;
+}
+
+/* 6. Input Section */
+.input-section {
+    padding: 20px;
+    background-color: #eeeeee;
+    display: flex;
+    align-items: flex-end;
+    gap: 15px;
+    border-bottom: 1px solid #ddd;
+}
+
+.input-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.input-group label {
+    font-size: 12px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+button {
+    background-color: #001f3f;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 4px;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: #003366;
+}
+
+/* 7. Table Section (Fills remaining space) */
+.table-wrapper {
+    flex: 1; /* Grows to fill height */
+    overflow-y: auto; /* Scrollable if list is long */
+    padding: 0;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    background-color: #003366;
+    color: white;
+    padding: 12px;
+    text-align: left;
+    position: sticky;
+    top: 0;
+}
+
+td {
+    padding: 10px 12px;
+    border-bottom: 1px solid #ddd;
+    color: #333;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Remove Button (Red) */
+.remove-btn {
+    background-color: #FF4136;
+    padding: 5px 10px;
+    font-size: 12px;
+}
+.remove-btn:hover { background-color: #c72e25; }
+
+/* 8. Footer with Total */
+.billing-footer {
+    padding: 20px;
+    background-color: #e0e0e0;
+    border-top: 2px solid #ccc;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.total-box {
+    font-size: 24px;
+    font-weight: bold;
+    color: #001f3f;
+}
+
+.print-btn {
+    background-color: #2ECC40; /* Green */
+}
+.print-btn:hover { background-color: #26ab35; }
+
+/* 9. Bottom Bar */
+.bottom-bar {
+    text-align: center;
+    color: #555;
+    padding: 5px;
+    font-size: 11px;
+    background-color: #000d1a;
+    color: #888;
+}

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supermarket Billing System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body onload="startClock()">
+
+    <div class="top-bar">
+        <div class="app-name">🛒 Supermarket</div>
+        <div class="live-clock" id="clock">Loading Date...</div>
+    </div>
+
+    <div class="main-container">
+        
+        <header>
+            <h1>SUPERMARKET BILLING SYSTEM</h1>
+            <p>Student Project | Semester 3</p>
+        </header>
+
+        <div class="input-section">
+            <div class="input-group">
+                <label>Item Name</label>
+                <input type="text" id="itemName" placeholder="e.g. Milk" autocomplete="off">
+            </div>
+            
+            <div class="input-group">
+                <label>Price (₹)</label>
+                <input type="number" id="itemPrice" placeholder="0.00" min="0">
+            </div>
+            
+            <div class="input-group">
+                <label>Quantity</label>
+                <input type="number" id="itemQty" placeholder="1" min="1">
+            </div>
+
+            <button onclick="addItem()">ADD TO BILL</button>
+        </div>
+
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Item Name</th>
+                        <th>Price</th>
+                        <th>Qty</th>
+                        <th>Total</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="billBody">
+                    </tbody>
+            </table>
+        </div>
+
+        <div class="billing-footer">
+            <div class="total-box">
+                Grand Total: <span class="currency">₹</span><span id="grandTotal">0.00</span>
+            </div>
+            <button class="print-btn" onclick="window.print()">🖨 PRINT INVOICE</button>
+        </div>
+
+    </div>
+
+    <div class="bottom-bar">
+        System Developed for 3rd Sem Project &copy; 2025
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
