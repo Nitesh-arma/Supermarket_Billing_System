@@ -1,4 +1,3 @@
-/* 1. Global Reset */
 * {
     margin: 0;
     padding: 0;
@@ -6,19 +5,17 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* 2. Full Screen Setup */
 body {
-    background-color: #001f3f; /* Navy Blue Background */
-    height: 100vh; /* Forces body to take full screen height */
+    background-color: #001f3f;
+    height: 100vh;
     display: flex;
     flex-direction: column;
-    overflow: hidden; /* Prevents double scrollbars */
+    overflow: hidden;
 }
 
-/* 3. Top Bar (Navy Darker) */
 .top-bar {
     background-color: #001226;
-    color: #7FDBFF; /* Light blue text */
+    color: #7FDBFF;
     padding: 10px 30px;
     display: flex;
     justify-content: space-between;
@@ -26,13 +23,12 @@ body {
     border-bottom: 1px solid #003366;
 }
 
-/* 4. Main Container (The White Box) */
 .main-container {
-    flex: 1; /* Takes all available empty space */
+    flex: 1;
     background-color: #f9f9f9;
     width: 90%;
     max-width: 1000px;
-    margin: 20px auto; /* Centers it */
+    margin: 20px auto;
     border-radius: 8px;
     box-shadow: 0 0 30px rgba(0,0,0,0.5);
     display: flex;
@@ -40,13 +36,12 @@ body {
     overflow: hidden;
 }
 
-/* 5. Header Inside Box */
 header {
     background-color: #001f3f;
     color: white;
     padding: 20px;
     text-align: center;
-    border-bottom: 4px solid #FF851B; /* Orange accent line */
+    border-bottom: 4px solid #FF851B;
 }
 
 header h1 {
@@ -60,7 +55,6 @@ header p {
     margin-top: 5px;
 }
 
-/* 6. Input Section */
 .input-section {
     padding: 20px;
     background-color: #eeeeee;
@@ -106,10 +100,9 @@ button:hover {
     background-color: #003366;
 }
 
-/* 7. Table Section (Fills remaining space) */
 .table-wrapper {
-    flex: 1; /* Grows to fill height */
-    overflow-y: auto; /* Scrollable if list is long */
+    flex: 1;
+    overflow-y: auto;
     padding: 0;
 }
 
@@ -137,15 +130,16 @@ tr:nth-child(even) {
     background-color: #f2f2f2;
 }
 
-/* Remove Button (Red) */
 .remove-btn {
     background-color: #FF4136;
     padding: 5px 10px;
     font-size: 12px;
 }
-.remove-btn:hover { background-color: #c72e25; }
 
-/* 8. Footer with Total */
+.remove-btn:hover {
+    background-color: #c72e25;
+}
+
 .billing-footer {
     padding: 20px;
     background-color: #e0e0e0;
@@ -162,11 +156,13 @@ tr:nth-child(even) {
 }
 
 .print-btn {
-    background-color: #2ECC40; /* Green */
+    background-color: #2ECC40;
 }
-.print-btn:hover { background-color: #26ab35; }
 
-/* 9. Bottom Bar */
+.print-btn:hover {
+    background-color: #26ab35;
+}
+
 .bottom-bar {
     text-align: center;
     color: #555;
@@ -176,27 +172,21 @@ tr:nth-child(even) {
     color: #888;
 }
 
-/* =========================================
-   FINAL PRINT SETTINGS (Paste at bottom of style.css)
-   ========================================= */
 @media print {
-    /* 1. Hide everything except the bill content */
-    .top-bar, 
-    .input-section, 
-    .print-btn, 
-    .bottom-bar, 
+    .top-bar,
+    .input-section,
+    .print-btn,
+    .bottom-bar,
     .remove-btn,
-    header p { 
-        display: none !important; 
+    header p {
+        display: none !important;
     }
 
-    /* 2. Force browser to remove default headers/footers if possible */
     @page {
-        margin: 0; /* Removes default browser margins */
+        margin: 0;
         size: auto;
     }
 
-    /* 3. Make the background white and full size */
     body, html {
         background-color: white !important;
         height: 100%;
@@ -205,32 +195,29 @@ tr:nth-child(even) {
         overflow: visible !important;
     }
 
-    /* 4. Stretch the Container to fill the A4 paper */
     .main-container {
         box-shadow: none;
         margin: 0;
         width: 100% !important;
         max-width: 100% !important;
-        min-height: 100vh; /* Forces it to be at least as tall as the paper */
+        min-height: 100vh;
         border: none;
-        padding: 20px 40px !important; /* Adds nice spacing like a real invoice */
+        padding: 20px 40px !important;
     }
 
-    /* 5. Header Styling - Bigger and bolder */
     header {
         border-bottom: 3px solid #000;
         padding-bottom: 20px;
         margin-bottom: 30px;
     }
-    
+
     header h1 {
         color: black;
-        font-size: 36px; /* Much bigger title */
+        font-size: 36px;
         text-transform: uppercase;
         letter-spacing: 2px;
     }
 
-    /* 6. Table Styling - Stretch and add space */
     .table-wrapper {
         overflow: visible !important;
         height: auto !important;
@@ -242,7 +229,7 @@ tr:nth-child(even) {
     }
 
     th {
-        background-color: #ddd !important; /* Light grey for print, saves ink */
+        background-color: #ddd !important;
         color: black !important;
         font-size: 18px;
         border: 1px solid #000;
@@ -255,23 +242,21 @@ tr:nth-child(even) {
         font-size: 16px;
     }
 
-    /* Hide the 'Action' column */
-    th:last-child, 
+    th:last-child,
     td:last-child {
         display: none;
     }
 
-    /* 7. Grand Total Section - Move to bottom */
     .billing-footer {
         background-color: transparent;
         border-top: 3px solid #000;
         margin-top: 50px;
         padding-top: 20px;
-        justify-content: flex-end; /* Aligns total to the right */
+        justify-content: flex-end;
     }
 
     .total-box {
-        font-size: 32px; /* Huge total for visibility */
+        font-size: 32px;
         color: black;
     }
 }
