@@ -175,3 +175,103 @@ tr:nth-child(even) {
     background-color: #000d1a;
     color: #888;
 }
+
+/* =========================================
+   FINAL PRINT SETTINGS (Paste at bottom of style.css)
+   ========================================= */
+@media print {
+    /* 1. Hide everything except the bill content */
+    .top-bar, 
+    .input-section, 
+    .print-btn, 
+    .bottom-bar, 
+    .remove-btn,
+    header p { 
+        display: none !important; 
+    }
+
+    /* 2. Force browser to remove default headers/footers if possible */
+    @page {
+        margin: 0; /* Removes default browser margins */
+        size: auto;
+    }
+
+    /* 3. Make the background white and full size */
+    body, html {
+        background-color: white !important;
+        height: 100%;
+        margin: 0 !important;
+        padding: 0 !important;
+        overflow: visible !important;
+    }
+
+    /* 4. Stretch the Container to fill the A4 paper */
+    .main-container {
+        box-shadow: none;
+        margin: 0;
+        width: 100% !important;
+        max-width: 100% !important;
+        min-height: 100vh; /* Forces it to be at least as tall as the paper */
+        border: none;
+        padding: 20px 40px !important; /* Adds nice spacing like a real invoice */
+    }
+
+    /* 5. Header Styling - Bigger and bolder */
+    header {
+        border-bottom: 3px solid #000;
+        padding-bottom: 20px;
+        margin-bottom: 30px;
+    }
+    
+    header h1 {
+        color: black;
+        font-size: 36px; /* Much bigger title */
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    }
+
+    /* 6. Table Styling - Stretch and add space */
+    .table-wrapper {
+        overflow: visible !important;
+        height: auto !important;
+    }
+
+    table {
+        width: 100% !important;
+        border: 1px solid #000;
+    }
+
+    th {
+        background-color: #ddd !important; /* Light grey for print, saves ink */
+        color: black !important;
+        font-size: 18px;
+        border: 1px solid #000;
+        padding: 15px;
+    }
+
+    td {
+        border: 1px solid #000;
+        padding: 15px;
+        font-size: 16px;
+    }
+
+    /* Hide the 'Action' column */
+    th:last-child, 
+    td:last-child {
+        display: none;
+    }
+
+    /* 7. Grand Total Section - Move to bottom */
+    .billing-footer {
+        background-color: transparent;
+        border-top: 3px solid #000;
+        margin-top: 50px;
+        padding-top: 20px;
+        justify-content: flex-end; /* Aligns total to the right */
+    }
+
+    .total-box {
+        font-size: 32px; /* Huge total for visibility */
+        color: black;
+    }
+}
